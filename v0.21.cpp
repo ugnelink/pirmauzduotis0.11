@@ -48,7 +48,6 @@ for (auto& a:studentai) {
 rf << left << setw(15) << setfill(' ') << a.vardas << left << setw(15) << setfill(' ') << a.pavarde << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinisvid << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinismed << endl;
 }
 
-}
  rf.close(); }
 	else {
 		
