@@ -1,3 +1,4 @@
+#include "trycatch.h"
 void iv_ir_tikr(auto &a) {
   cin>>a;
   do{
