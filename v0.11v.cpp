@@ -40,7 +40,7 @@ sort (b.paz.begin(), b.paz.end());
 cout << endl;
 cout << left << setw(15) << setfill(' ') << "vardas" << left << setw(15) << setfill(' ') << "pavarde" << left << setw(15) << setfill(' ') << "galutinisvid" << left << setw(15) << setfill(' ') << "galutinismed" << endl;
 cout << string(60, '-') << endl; 
-for(auto& a:studentai) {
+for (auto& a:studentai) {
 cout << left << setw(15) << setfill(' ') << a.vardas << left << setw(15) << setfill(' ') << a.pavarde << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinisvid << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinismed << endl;
 
 }
