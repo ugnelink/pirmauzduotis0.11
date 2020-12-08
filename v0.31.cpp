@@ -1,7 +1,6 @@
 # v0.31.cpp
-
-#include <iostream>
 #include "trycatch.h"
+#include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <windows.h>
