@@ -12,28 +12,40 @@ struct baze{string vardas; string pavarde; float vid; vector< int >paz; int kiek
 
 int main() {	
 	vector <baze> studentai;
-long m; int h;
+long m; int h; int g; string antraste; 
 cout << " jei norite duomenis nuskaityti is failo, iveskite 1, jei nenorite iveskite 0 " << endl;
 	cin >> h; 
 	if (h==1){
 int n=0;
 ifstream df("kursiokai.txt");
 ofstream rf("Rez.txt");
+		getline(df,antraste,'\n');
+		g=count(antraste.begin(), antraste.end(), 'N'); 
 while (!df.eof()) {
+	baze b;
+	b.kiekis=g;
 n=n+1;
-b[n].sum=0; 
-df >> b[n].pav >> b[n].var;
-for(int i=1; i<=6; i++) { df >> b[n].p[i]; b[n].sum=b[n].sum+b[n].p[i];}
-b[n].vid=b[n].sum/6;
+b.sum=0; 
+df >> b.vardas >> b.pavarde;
+for(int i=0; i<b.kiekis; i++) { 	
+	float sk;
+df >> sk; b.paz.push_back(sk);  b.sum=b.sum+sk;}
+b.vid=b.sum/b.kiekis;
 
-if(n%2==1) med=b[(n+1)/2].vid; else med=( b[n/2].vid+b[(n/2)+1].vid ) /2;
-	cout <<"mediana yra: " << med << endl; 
+sort (b.paz.begin(), b.paz.end());
+	if(b.kiekis%2==1) b.med=b.paz.at((b.kiekis+1)/2); else b.med=b.paz.at(b.kiekis/2)+b.paz.at(((b.kiekis/2)+1)/2);
+  df>>b.egz;
+	b.galutinisvid=0.4*b.vid+0.6*b.egz;
+  b.galutinismed=0.4*b.med+0.6*b.egz;
+	studentai.push_back(b);
+	studentai.reserve(n);
  }
 df.close(); 
-	for (int i=1; i<=n-1; i++)  { 
-rf << fixed; 
-rf << setprecision(2);
-rf << b[i].var << " " <<  b[i].pav << " " <<   b[i].vid  << endl;
+		rf << left << setw(15) << setfill(' ') << "vardas" << left << setw(15) << setfill(' ') << "pavarde" << left << setw(15) << setfill(' ') << "galutinisvid" << left << setw(15) << setfill(' ') << "galutinismed" << endl;
+rf << string(60, '-') << endl; 
+for (auto& a:studentai) {
+rf << left << setw(15) << setfill(' ') << a.vardas << left << setw(15) << setfill(' ') << a.pavarde << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinisvid << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinismed << endl;
+}
 
 }
  rf.close(); }
@@ -68,7 +80,6 @@ cout << left << setw(15) << setfill(' ') << "vardas" << left << setw(15) << setf
 cout << string(60, '-') << endl; 
 for (auto& a:studentai) {
 cout << left << setw(15) << setfill(' ') << a.vardas << left << setw(15) << setfill(' ') << a.pavarde << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinisvid << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinismed << endl;
-
 }
 	}
 return (0);
