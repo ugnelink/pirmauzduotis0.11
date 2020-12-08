@@ -7,6 +7,7 @@
 #include <time.h>
 #include <algorithm>
 #include <vector>
+#include <string>
 using namespace std;
 struct baze{string vardas; string pavarde; float vid; vector< int >paz; int kiekis; float egz; float galutinismed; float galutinisvid; float sum=0; float med;}; 
 
