@@ -1,6 +1,7 @@
-# v0.21.cpp
+# v0.31.cpp
 
 #include <iostream>
+#include "trycatch.h"
 #include <fstream>
 #include <iomanip>
 #include <windows.h>
@@ -15,7 +16,7 @@ int main() {
 	vector <baze> studentai;
 long m; int h; int g; string antraste; 
 cout << " jei norite duomenis nuskaityti is failo, iveskite 1, jei nenorite iveskite 0 " << endl;
-	cin >> h; 
+        iv_ir_tikr(h);
 	if (h==1){
 int n=0;
 ifstream df("kursiokai.txt");
@@ -53,19 +54,22 @@ rf << left << setw(15) << setfill(' ') << a.vardas << left << setw(15) << setfil
 		
 	
 cout <<"iveskite studentu skaiciu: "<< endl;
-cin >> m;
+ skaicius_ir_tikr(m);
 for(long i=1;i<=m;i=i+1)
 {
 	baze b;
 cout << "iveskite " << i << "studento varda, pavarde, namu darbu skaiciu, namu darbus, egzamina : ";
-cin >> b.vardas >> b.pavarde >> b.kiekis;
+cin >> b.vardas >> b.pavarde;
+	skaicius_ir_tikr(b.kiekis);
 for (int j=0; j<b.kiekis; j++) {
 	float sk;
-cin >> sk; b.paz.push_back(sk);
+	 paz_ir_tikr(sk);
+ b.paz.push_back(sk);
 b.sum=b.sum+sk;
 	b.paz.reserve(b.kiekis);
 }
-cin >> b.egz;
+	
+paz_ir_tikr(b.egz);
 b.vid=b.sum/b.kiekis;
 
 sort (b.paz.begin(), b.paz.end());
