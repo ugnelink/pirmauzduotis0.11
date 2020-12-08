@@ -1,4 +1,4 @@
-# v0.11v.cpp
+# v0.21.cpp
 
 #include <iostream>
 #include <fstream>
@@ -12,8 +12,34 @@ struct baze{string vardas; string pavarde; float vid; vector< int >paz; int kiek
 
 int main() {	
 	vector <baze> studentai;
-long m;
+long m; int h;
+cout << " jei norite duomenis nuskaityti is failo, iveskite 1, jei nenorite iveskite 0 " << endl;
+	cin >> h; 
+	if (h==1){
+int n=0;
+ifstream df("kursiokai.txt");
+ofstream rf("Rez.txt");
+while (!df.eof()) {
+n=n+1;
+b[n].sum=0; 
+df >> b[n].pav >> b[n].var;
+for(int i=1; i<=6; i++) { df >> b[n].p[i]; b[n].sum=b[n].sum+b[n].p[i];}
+b[n].vid=b[n].sum/6;
 
+if(n%2==1) med=b[(n+1)/2].vid; else med=( b[n/2].vid+b[(n/2)+1].vid ) /2;
+	cout <<"mediana yra: " << med << endl; 
+ }
+df.close(); 
+	for (int i=1; i<=n-1; i++)  { 
+rf << fixed; 
+rf << setprecision(2);
+rf << b[i].var << " " <<  b[i].pav << " " <<   b[i].vid  << endl;
+
+}
+ rf.close(); }
+	else {
+		
+	
 cout <<"iveskite studentu skaiciu: "<< endl;
 cin >> m;
 for(long i=1;i<=m;i=i+1)
@@ -44,5 +70,7 @@ for (auto& a:studentai) {
 cout << left << setw(15) << setfill(' ') << a.vardas << left << setw(15) << setfill(' ') << a.pavarde << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinisvid << left << setw(15) << setfill(' ') << fixed << setprecision(2) << a.galutinismed << endl;
 
 }
+	}
 return (0);
 }
+
