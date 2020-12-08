@@ -1,5 +1,5 @@
 void iv_ir_tikr(auto &a) {
-  //cin>>a;
+  cin>>a;
   do{
     try {
       
@@ -16,7 +16,7 @@ void iv_ir_tikr(auto &a) {
   }while (std::cin.fail()==true);
 }
 void paz_ir_tikr(auto &a) {
-  //cin>>a;
+  cin>>a;
   do{
     try {
       
@@ -34,7 +34,7 @@ void paz_ir_tikr(auto &a) {
   }while (std::cin.fail()==true ||(a<0) || (a>10) );
 }
 void skaicius_ir_tikr(auto &a) {
-  //cin>>a;
+  cin>>a;
   do{
     try {
       
