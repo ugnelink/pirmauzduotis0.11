@@ -13,7 +13,7 @@ struct baze{string vardas; string pavarde; float vid; vector< int >paz; int kiek
 
 int main() {	
 	vector <baze> studentai;
-long m; int h; int g; string antraste; 
+int m; int h; int g; string antraste; 
 cout << " jei norite duomenis nuskaityti is failo, iveskite 1, jei nenorite iveskite 0 " << endl;
         iv_ir_tikr(h);
 	if (h==1){
