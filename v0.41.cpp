@@ -1,4 +1,4 @@
-# v0.31.cpp
+# v0.41.cpp
 #include "trycatch.h"
 #include <iostream>
 #include <fstream>
@@ -87,5 +87,48 @@ cout << left << setw(15) << setfill(' ') << a.vardas << left << setw(15) << setf
 	}
 return (0);
 }
+ ofstream rf2("vargsiukai.txt");
+    ofstream rf3("galvociai.txt");
 
+void ketvirta (int irasusk) {
+	ofstream rf(to_string(irasusk)+".txt");
+    int r,t,k;
+	string name[]={"Jonas", "Petras", "Justinas","Adomas", "Tadas", "Dominykas", "Donatas", "Remigijus", "Antanas", "Vincas"};
+	string pavarde[]={"Jonaitis", "Petraitis", "Justinaitis", "Adomaitis", "Tadaitis", "Dominykaitis", "Donataitis", "Kazlauskas", "Antanaitis", "Vincaitis"};
+	int nd;
+	srand(time(NULL));
+	vector <baze> studentai;
+	cout << "iveskite namu darbu skaiciu " << endl;
+	skaicius_ir_tikr(nd);
+	
+	
+	for(int i=0; i<irasusk; i++) {
+	r=rand()%10;
+	t=rand()%10;	
+		baze b;
+		b.vardas=name[r]+ to_string(rand()%100+1);
+		b.pavarde=pavarde[t]+to_string(rand()%100+1);
+		b.kiekis=nd;
+		vector <int> paz;
+		
+		for(int j=0; j<nd; j++) {
+			k=rand()%10+1;
+		paz.push_back(k);}
+		b.paz=paz;
+		b.egz=rand()%10+1;
+		studentai.push_back(b);
+		
+	}
+	rf << left << setw(15) << setfill(' ') << "vardas" << left << setw(15) << setfill(' ') << "pavarde" ;
+	for(int j=0; j<nd; j++){rf << left << setw(15) << setfill(' ') << "ND"<<j+1;}
+	rf << left << setw(15) << setfill(' ') << "egzaminas" << endl; 
+for (auto& a:studentai) { 
+rf << left << setw(15) << setfill(' ') << a.vardas << left << setw(15) << setfill(' ') << a.pavarde;
+	for (auto& aa:a.nd) {rf << left << setw(15) << setfill(' ') << a.nd;}
+	rf << left << setw(15) << setfill(' ') << a.egzaminas  << endl;
+}
+
+ rf.close(); }
+
+     
 
