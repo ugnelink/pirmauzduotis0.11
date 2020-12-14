@@ -1,20 +1,24 @@
 
+
 #include "funkcijos.h"
+#include "Header5.h"
 
 int main() {
 	vector <baze> studentai;
 	int m; int h; int g; int p; 
 	cout << "Jei norite atlikti spartos greicio analize, iveskite 1, jei nenorite, iveskite 0" << endl;
+	cin >> p;
 	iv_ir_tikr(p);
 	
 	if (p == 1) { 
-		antra(1000); antra(10000); antra(100000); antra(1000000); antra(10000000);
+		antra(1000);  antra(10000); antra(100000); antra(1000000); antra(10000000); 
 
-
+		antra1(1000);  antra1(10000); antra1(100000); antra1(1000000); antra1(10000000);
 	}
 	else {
 		cout << " jei norite duomenis nuskaityti is failo, iveskite 1, jei nenorite iveskite 0 " << endl;
-		iv_ir_tikr(h);
+		cin >> h;
+		iv_ir_tikr(h); 
 
 		if (h == 1) {
 			string failas;
@@ -27,22 +31,27 @@ int main() {
 		else {
 
 			cout << "iveskite studentu skaiciu: " << endl;
+			cin >> m;
 			skaicius_ir_tikr(m);
 			for (long i = 1; i <= m; i = i + 1)
 			{
 				baze b;
 				cout << "iveskite " << i << "studento varda, pavarde, namu darbu skaiciu, namu darbus, egzamina : ";
 				cin >> b.vardas >> b.pavarde;
+				cin >> b.kiekis; 
 				skaicius_ir_tikr(b.kiekis);
 				for (int j = 0; j < b.kiekis; j++) {
 					float sk;
+					cin >> sk;
 					paz_ir_tikr(sk);
+					
 					b.paz.push_back(sk);
 					b.sum = b.sum + sk;
 					b.paz.reserve(b.kiekis);
 				}
-
+				cin >> b.egz;
 				paz_ir_tikr(b.egz);
+				
 				b.vid = b.sum / b.kiekis;
 
 				sort(b.paz.begin(), b.paz.end());
@@ -62,4 +71,5 @@ int main() {
 	}
 	return (0);
 }
+
 
