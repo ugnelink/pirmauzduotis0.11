@@ -6,7 +6,7 @@ void ketvirta1(int irasusk) {
 	string pavarde[] = { "Jonaitis", "Petraitis", "Justinaitis", "Adomaitis", "Tadaitis", "Dominykaitis", "Donataitis", "Kazlauskas", "Antanaitis", "Vincaitis" };
 	int nd;
 	srand(time(NULL));
-	list <baze> studentai;
+	list <baze1> studentai;
 	cout << "iveskite namu darbu skaiciu " << endl;
 	cin >> nd;
 	skaicius_ir_tikr(nd);
@@ -14,7 +14,7 @@ void ketvirta1(int irasusk) {
 	for (int i = 0; i < irasusk; i++) {
 		r = rand() % 10;
 		t = rand() % 10;
-		baze b;
+		baze1 b;
 		b.vardas = name[r] + to_string(rand() % 100 + 1);
 		b.pavarde = pavarde[t] + to_string(rand() % 100 + 1);
 		b.kiekis = nd;
@@ -40,7 +40,7 @@ void ketvirta1(int irasusk) {
 	}
 	rf.close();
 }
-void nuskaitymas1(string failas, list <baze>& studentai) {
+void nuskaitymas1(string failas, list <baze1>& studentai) {
 	int n = 0;
 	ifstream df(failas + ".txt");
 	int g;
@@ -48,7 +48,7 @@ void nuskaitymas1(string failas, list <baze>& studentai) {
 	getline(df, antraste, '\n');
 	g = count(antraste.begin(), antraste.end(), 'N');
 	while (!df.eof()) {
-		baze b;
+		baze1 b;
 		b.kiekis = g;
 		n = n + 1;
 		b.sum = 0;
@@ -59,7 +59,7 @@ void nuskaitymas1(string failas, list <baze>& studentai) {
 		}
 		b.vid = b.sum / b.kiekis;
 
-		sort(b.paz.begin(), b.paz.end());
+		b.paz.sort();
 		auto iterator = b.paz.begin();
 		if (b.kiekis % 2 == 1) {
 			for (int i = 0; i < b.kiekis / 2; i++) iterator++;
@@ -78,7 +78,7 @@ void nuskaitymas1(string failas, list <baze>& studentai) {
 	df.close();
 }
 
-void funkcija1(string failas, list <baze> studentai) {
+void funkcija1(string failas, list <baze1> studentai) {
 
 	ofstream rf(failas + ".txt");
 	rf << left << setw(15) << setfill(' ') << "vardas" << left << setw(15) << setfill(' ') << "pavarde" << left << setw(15) << setfill(' ') << "galutinisvid" << left << setw(15) << setfill(' ') << "galutinismed" << endl;
@@ -89,7 +89,7 @@ void funkcija1(string failas, list <baze> studentai) {
 
 	rf.close();
 }
-void pirma1(list <baze> studentai, list <baze>& vargsiukai, list <baze>& galvociai) {
+void pirma1(list <baze1> studentai, list <baze1>& vargsiukai, list <baze1>& galvociai) {
 	for (auto& a : studentai) {
 		if (a.galutinisvid >= 5) galvociai.push_back(a);
 		else vargsiukai.push_back(a);
@@ -97,9 +97,11 @@ void pirma1(list <baze> studentai, list <baze>& vargsiukai, list <baze>& galvoci
 	}
 
 }
+
 void antra1(int irasusk)
 {
-	list <baze> studentai; list <baze> vargsiukai; list <baze> galvociai;
+	list <baze1> studentai; list <baze1> vargsiukai; list <baze1> galvociai;
+	cout << "testas su listais" << endl;
 	auto start = chrono::high_resolution_clock::now();
 
 	ketvirta1(irasusk);
