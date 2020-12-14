@@ -1,12 +1,12 @@
 #include "trycatch.h"
 void iv_ir_tikr(int& a) {
-    cin >> a;
+   
     
     do {
         try {
 
             if (cin.fail()) { throw std::runtime_error("ivedete netinkama duomeni!!!\n");  }
-            else if (a != 0 || a != 1) { throw std::runtime_error("ivedete netinkama duomeni!!!\n"); }
+            else if (a <0 && a>1) { throw std::runtime_error("ivedete netinkama duomeni!!!\n"); }
 
         }
         catch (const std::runtime_error e) {
@@ -18,10 +18,10 @@ void iv_ir_tikr(int& a) {
             
 
         }
-    } while (std::cin.fail() == true || a != 0 || a != 1);
+    } while (std::cin.fail() == true || (a < 0 && a>1));
 }
 void paz_ir_tikr(float& a) {
-    cin >> a;
+    
     do {
         try {
 
@@ -39,7 +39,7 @@ void paz_ir_tikr(float& a) {
     } while (std::cin.fail() == true || (a < 0) || (a > 10));
 }
 void skaicius_ir_tikr(int& a) {
-    cin >> a;
+   
     do {
         try {
 
