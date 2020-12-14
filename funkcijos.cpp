@@ -8,6 +8,7 @@ void ketvirta(int irasusk) {
 	srand(time(NULL));
 	vector <baze> studentai;
 	cout << "iveskite namu darbu skaiciu " << endl;
+	cin >> nd;
 	skaicius_ir_tikr(nd);
 
 	for (int i = 0; i < irasusk; i++) {
@@ -114,6 +115,8 @@ void antra(int irasusk)
 
 	diff = chrono::high_resolution_clock::now() - start;
 	cout << "Failo is " << irasusk << " irasu isvedimas uztruko: " << diff.count() << " s\n";
+	cout << endl;
+
 
 
 
