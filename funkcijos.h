@@ -15,4 +15,4 @@ void ketvirta(int irasusk);
 void nuskaitymas(string failas, vector <baze>& studentai);
 void funkcija(string failas, vector <baze> studentai);
 void pirma(vector <baze> studentai, vector <baze>& vargsiukai, vector <baze>& galvociai);
-void antra(int irasusk);
+void padalinimostrategija(vector <baze>& studentai, vector <baze>& vargsiukai);
