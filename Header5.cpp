@@ -97,37 +97,18 @@ void pirma1(list <baze1> studentai, list <baze1>& vargsiukai, list <baze1>& galv
 	}
 
 }
-
-void antra1(int irasusk)
-{
-	list <baze1> studentai; list <baze1> vargsiukai; list <baze1> galvociai;
-	cout << "testas su listais" << endl;
-	auto start = chrono::high_resolution_clock::now();
-
-	ketvirta1(irasusk);
-	chrono::duration<double> diff = chrono::high_resolution_clock::now() - start;
-	cout << "Failo is " << irasusk << " irasu kurimas uztruko: " << diff.count() << " s\n";
-
-	start = chrono::high_resolution_clock::now();
-	nuskaitymas1(to_string(irasusk), studentai);
-
-	diff = chrono::high_resolution_clock::now() - start;
-	cout << "Failo is " << irasusk << " irasu nuskaitymas uztruko: " << diff.count() << " s\n";
-	start = chrono::high_resolution_clock::now();
-	pirma1(studentai, vargsiukai, galvociai);
-
-	diff = chrono::high_resolution_clock::now() - start;
-	cout << "Failo is " << irasusk << " irasu rusiavimas uztruko: " << diff.count() << " s\n";
-	start = chrono::high_resolution_clock::now();
-	funkcija1("galvociai", galvociai);
-
-	funkcija1("vargsiukai", vargsiukai);
-
-	diff = chrono::high_resolution_clock::now() - start;
-	cout << "Failo is " << irasusk << " irasu isvedimas uztruko: " << diff.count() << " s\n";
-	cout << endl;
+void padalinimostrategija1(list <baze1>& studentai, list <baze1>& vargsiukai) {
 
 
+	for (auto& a : studentai) {
 
+		if (a.galutinisvid < 5)  vargsiukai.push_back(a);
+	}
 
+	studentai.erase(remove_if(studentai.begin(), studentai.end(), [&](baze1
+		const& studentas) { return studentas.galutinisvid < 5; }), studentai.end());
 }
+
+
+
+
