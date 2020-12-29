@@ -1,8 +1,7 @@
 
-
 #include "funkcijos.h"
 #include "Header5.h"
-
+void antra(int irasusk);
 int main() {
 	vector <baze> studentai;
 	int m; int h; int g; int p; 
@@ -10,10 +9,9 @@ int main() {
 	cin >> p;
 	iv_ir_tikr(p);
 	
-	if (p == 1) { 
-		antra(1000);  antra(10000); antra(100000); antra(1000000); antra(10000000); 
+	if (p == 1) {
 
-		antra1(1000);  antra1(10000); antra1(100000); antra1(1000000); antra1(10000000);
+		antra(1000);  antra(10000); antra(100000); antra(1000000); antra(10000000); 
 	}
 	else {
 		cout << " jei norite duomenis nuskaityti is failo, iveskite 1, jei nenorite iveskite 0 " << endl;
@@ -72,4 +70,47 @@ int main() {
 	return (0);
 }
 
+void antra(int irasusk)
+{
+	vector <baze> studentai; vector <baze> vargsiukai; vector <baze> galvociai;
+	cout << "testas su vektoriais" << endl;
+	ketvirta(irasusk);
+	nuskaitymas(to_string(irasusk), studentai);
 
+	auto start = chrono::high_resolution_clock::now();
+	pirma(studentai, vargsiukai, galvociai);
+
+	chrono::duration <double> diff = chrono::high_resolution_clock::now() - start;
+	cout << "Failo is " << irasusk << " irasu rusiavimas, pagal pirma strategija, uztruko: " << diff.count() << " s\n";
+	studentai.clear();
+	vargsiukai.clear();
+	galvociai.clear();
+	nuskaitymas(to_string(irasusk), studentai);
+	start = chrono::high_resolution_clock::now();
+	padalinimostrategija(studentai, vargsiukai);
+    diff = chrono::high_resolution_clock::now() - start;
+	cout << "Failo is " << irasusk << " irasu rusiavimas, pagal antra strategija, uztruko: " << diff.count() << " s\n";
+	studentai.clear();
+	vargsiukai.clear();
+	galvociai.clear();
+	list <baze1> studentai1; list <baze1> vargsiukai1; list <baze1> galvociai1;
+	cout << "testas su listais" << endl;
+	nuskaitymas1(to_string(irasusk), studentai1);
+
+	start = chrono::high_resolution_clock::now();
+	pirma1(studentai1, vargsiukai1, galvociai1);
+
+    diff = chrono::high_resolution_clock::now() - start;
+	cout << "Failo is " << irasusk << " irasu rusiavimas, pagal pirma strategija, uztruko: " << diff.count() << " s\n";
+	studentai1.clear();
+	vargsiukai1.clear();
+	galvociai1.clear();
+	nuskaitymas1(to_string(irasusk), studentai1);
+	start = chrono::high_resolution_clock::now();
+	padalinimostrategija1(studentai1, vargsiukai1);
+	diff = chrono::high_resolution_clock::now() - start;
+	cout << "Failo is " << irasusk << " irasu rusiavimas, pagal antra strategija, uztruko: " << diff.count() << " s\n";
+	studentai1.clear();
+	vargsiukai1.clear();
+	galvociai1.clear();
+}
