@@ -17,4 +17,4 @@ Rūšiavimas tiek pirma strategija, tiek antrąja.Testas vykdomas pradžioje su 
 Įvedus 0, atsiranda pasirinkimas: Jei norite nuskaityti duomenis iš failo, įveskite 1, jei nenorite įveskite 0.
 
 2a žingsnis:Jei norite nuskaityti duomenis iš failo, įveskite 1, jei nenorite įveskite 0. Įvedus 1, reikia įvesti failo pavadinimą. 
-2b žingsnis:Suvedus failo pavadinimą (bet kokį) 
+2b žingsnis:Suvedus failo pavadinimą (bet kokį). 
