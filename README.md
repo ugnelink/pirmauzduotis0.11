@@ -10,8 +10,9 @@ Rūšiavimas tiek pirma strategija, tiek antrąja.Testas vykdomas pradžioje su 
 Įvedus 0, atsiranda pasirinkimas: Jei norite nuskaityti duomenis iš failo, įveskite 1, jei nenorite įveskite 0.
 
 2.1 žingsnis:Jei norite nuskaityti duomenis iš failo, įveskite 1, jei nenorite įveskite 0. Įvedus 0, reikia įvesti studentų skaičių. 
-2.2 žingsnis:Įvedus studentų skaičių (bet kokį), prašoma įvesti studento vardą, pavardę, namų darbų skaičių, pažymį už namų darbus, egzamino pažymį. 
-2.3 žingsnis:suvedus studento vardą, pavardę, namų darbų skaičių, pažymį už namų darbus, egzamino pažymį, yra PARODOMA  
+2.2 žingsnis:Įvedus studentų skaičių (bet kokį), prašoma įvesti studento vardą, pavardę, namų darbų skaičių, pažymius už namų darbus, egzamino pažymį. 
+2.3 žingsnis:suvedus studento vardą, pavardę, namų darbų skaičių, pažymius už namų darbus, egzamino pažymį, yra parodomas gražus išvedimas su studento vardu, pavarde, 
+galutiniu vidurkiu bei galutine mediana. 
 
 1 žingsnis: žingsnis: Jei norite atlikti spartos greicio analize, iveskite 1, jei nenorite, iveskite 0.
 Įvedus 0, atsiranda pasirinkimas: Jei norite nuskaityti duomenis iš failo, įveskite 1, jei nenorite įveskite 0.
