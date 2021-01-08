@@ -18,4 +18,4 @@ galutiniu vidurkiu bei galutine mediana.
 Įvedus 0, atsiranda pasirinkimas: Jei norite nuskaityti duomenis iš failo, įveskite 1, jei nenorite įveskite 0.
 
 2a žingsnis:Jei norite nuskaityti duomenis iš failo, įveskite 1, jei nenorite įveskite 0. Įvedus 1, reikia įvesti failo pavadinimą. 
-2b žingsnis:Suvedus failo pavadinimą (bet kokį). 
+2b žingsnis:Suvedame failo pavadinimą ,,Studentai'', kuriame išsaugoti studentų vardai, pavardės, pažymiai bei egzamino balas. 
